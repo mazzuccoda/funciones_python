@@ -112,7 +112,7 @@ if __name__ == '__main__':
     print("¡El juego de la generala!")
 
 print("#############################################")
-print("Comienza el Juego!!!")
+print("Comienza el Juego!!!, tiene 5 intentos")
 print("#############################################")
 
 n_dados = 5
