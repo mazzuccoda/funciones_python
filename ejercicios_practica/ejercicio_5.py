@@ -9,14 +9,28 @@
 
 # Ejercicios con funciones y módulos
 import random
+from typing import Counter
 
 # --------------------------------
 # Aquí dentro definir la función contar
+
+def contar(lista,numero):
+
+    return lista.count(numero)
+
 
 
 
 # Aquí copiar la función lista_aleatoria
 # ya elaborada
+
+def lista_aleatoria(inicio,fin,cant):
+    resultado = []
+    x = 0
+    for x in range(cant):
+        numero = random.randrange(inicio, fin+1)
+        resultado.append(numero)
+    return resultado
 
 
 # --------------------------------
@@ -28,6 +42,9 @@ if __name__ == '__main__':
     inicio = 0
     fin = 9
     cantidad = 5
+
+
+lista = lista_aleatoria(inicio, fin, cantidad)
 
     # Alumno: Crear la función "contar"
 
@@ -54,9 +71,15 @@ if __name__ == '__main__':
 
     # cantidad_tres = contar(lista_numeros, 3)
 
+cantidad_tres = contar(lista,3)
+
+print(lista)
+
+print("la cantidad de veces que se repite 3 es", cantidad_tres)
+
     # Imprimir en pantalla "cantidad_tres" que informa
     # cuantas veces se repite el tres en la lista
 
     # print(cantidad_tres)
 
-    print("terminamos")
+

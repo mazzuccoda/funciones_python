@@ -77,11 +77,78 @@ import random
 # Dentro de esta sección copiar y crear
 # todas las funciones que utilice
 
+#función para contar la cantidad de repetición de numero en un lista
+def contar(lista,numero):
+    return lista.count(numero)
+
+#genera una lista aleatoria del 1 al 6
+def lista_aleatoria(n):
+    resultado = []
+    for x in range(n):
+        numero = random.randrange(1, 7)
+        resultado.append(numero)
+    return resultado
+
+# cuanta la frecuencia de los numeros del 1-6 en unas lista
+def contador_generala(lista):
+    frecuencia = []
+    for x in range(6):
+        frecuencia.append(lista.count(x+1))
+    return frecuencia
+
+#selecciona el numero con mayor frecuencia y selecciona que numero es
+def elegido (lista):
+    maximo = 0
+    numero_elegido = 0
+    maximo = max(lista)
+    numero_elegido = lista.index(maximo)+1
+    return maximo,numero_elegido
+
+
 
 # --------------------------------
 
 if __name__ == '__main__':
     print("¡El juego de la generala!")
+
+print("#############################################")
+print("Comienza el Juego!!!")
+print("#############################################")
+
+n_dados = 5
+numero_elegido = 0
+frecuencia = 1
+
+for x in range(5):
+    print(f"tiro N° {x+1} con {n_dados} dados")
+    tiro = lista_aleatoria(n_dados)
+    print("dados tirados...")
+    print(tiro)
+
+    if n_dados == 5:
+        seleccionar = elegido(contador_generala(tiro))
+        print(f"El numero elegido es el {seleccionar[1]}, que salio {seleccionar[0]} veces")
+        numero_elegido = seleccionar[1]
+        frecuencia = seleccionar [0]
+            
+        if frecuencia > 1:
+            n_dados -= frecuencia
+
+    elif n_dados < 5 and n_dados > 0:
+        frecuencia_elegido = contar(tiro,numero_elegido)
+        if frecuencia_elegido > 0:
+            n_dados -=frecuencia_elegido 
+            print(contar(tiro,numero_elegido))
+            if n_dados == 0:
+                print("GANO")
+                break
+    else:
+        print("GANO")
+        break
+
+if n_dados > 0:
+    print("PERDIO! JUEGE OTRA VEZ")
+          
     # A partir de aquí escriba el código que
     # invoca a las funciones y resuelve el enunciado
     # Leer el enunciado con atención y consultar cualquier duda

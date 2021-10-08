@@ -12,7 +12,13 @@ import random
 
 # --------------------------------
 # Aquí dentro definir la función lista_aleatoria
-
+def lista_aleatoria(inicio,fin,cant):
+    resultado = []
+    x = 0
+    for x in range(cant):
+        numero = random.randrange(inicio, fin+1)
+        resultado.append(numero)
+    return resultado
 
 # --------------------------------
 
@@ -24,13 +30,15 @@ if __name__ == '__main__':
     fin = 10
     cantidad = 5
 
+print(lista_aleatoria(1,10,5))
+
     # Alumno: Crear la función "lista_aleatoria"
 
     # Para este ejercicio utilizaremos el módulo random
     # Ejemplo de como obtener un numero aleatorio
     # entre inicio y fin
     # inicio <= numero <= fin
-    numero = random.randrange(inicio, fin+1)
+    # numero = random.randrange(inicio, fin+1)
     # Documentación oficial de random
     # https://docs.python.org/3.7/library/random.html
     # Ante cualquier duda preguntar en el campus!
@@ -61,4 +69,4 @@ if __name__ == '__main__':
 
     # print(mi_lista_aleatoria)
 
-    print("terminamos")
+print("terminamos")

@@ -12,6 +12,13 @@
 # --------------------------------
 # Aquí dentro definir la función ordenar
 #def ordenar (numeros):
+def ordenar(numeros):
+    numeros.sort()
+    resultado = numeros
+    return resultado
+
+def ordenar2(numeros):
+    return sorted(numeros)
 
 
 # --------------------------------
@@ -35,8 +42,12 @@ if __name__ == '__main__':
     # Luego de crear la función invocarla en este lugar:
 
     # lista_ordenada = ordenar(numeros)
-
+    lista_ordenada = ordenar(numeros)
     # Imprimir en pantalla "lista_ordenada" que tendrá
     # los valores retornado por la función ordenar:
+
+    print(lista_ordenada)
+    
+    print(ordenar2(numeros))
 
     print("terminamos")
