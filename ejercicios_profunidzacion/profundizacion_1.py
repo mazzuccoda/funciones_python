@@ -138,7 +138,7 @@ for x in range(5):
         frecuencia_elegido = contar(tiro,numero_elegido)
         if frecuencia_elegido > 0:
             n_dados -=frecuencia_elegido 
-            print(contar(tiro,numero_elegido))
+            #print(contar(tiro,numero_elegido))
             if n_dados == 0:
                 print("GANO")
                 break
@@ -152,3 +152,4 @@ if n_dados > 0:
     # A partir de aquí escriba el código que
     # invoca a las funciones y resuelve el enunciado
     # Leer el enunciado con atención y consultar cualquier duda
+
